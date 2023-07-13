@@ -23,17 +23,33 @@ public class LoanApplicationServiceImpl implements LoanApplicationService
 	}
 
 	@Override
-	public Optional<LoanApplication> getloan(int cid) 
+	public List<LoanApplication> getloan(int cid) 
 	{
-		Optional<LoanApplication> loanapp =loanapprepository.findById(cid);
-	
-		if (loanapp.isPresent()) 
+		return loanapprepository.findByCustomerId(cid);
+	}
+
+	@Override
+	public void deleteloan(int cid)
+	{
+		loanapprepository.deleteById(cid);
+	}
+
+	@Override
+	public LoanApplication editloan(int cid) 
+	{
+		Optional<LoanApplication> loanapp=loanapprepository.findById(cid);
+		if (loanapp.isPresent())
 		{
-			loanapp.get();
-			
-			return loanapp;
+			LoanApplication l=loanapp.get();
+			return l;
 		}
 		return null;
+	}
+
+	@Override
+	public LoanApplication updateloan(LoanApplication loanapp) 
+	{
+		return loanapprepository.save(loanapp);
 	}
 
 }
