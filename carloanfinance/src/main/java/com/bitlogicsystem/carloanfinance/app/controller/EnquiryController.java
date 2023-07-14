@@ -26,7 +26,7 @@ public class EnquiryController {
 	
 	
 	@PostMapping("/SaveEnquiry")
-	public ResponseEntity<Enquiry> EnquiryController(@RequestBody Enquiry enquiry){
+	public ResponseEntity<Enquiry> SaveEnquiry(@RequestBody Enquiry enquiry){
 		
 		  Enquiry eq=enquiryservice.saveEnquiry(enquiry);
 		
