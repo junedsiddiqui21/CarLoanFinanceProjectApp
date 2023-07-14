@@ -45,4 +45,9 @@ public class EnquiryServiceImpl  implements EnquiryService{
 		return et;
 	}
 
+	@Override
+	public Enquiry checkCibilScore(Enquiry enq) {
+	return enquiryRepository.save(enq);
+	}
+
 }

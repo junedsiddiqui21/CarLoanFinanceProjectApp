@@ -14,4 +14,6 @@ public interface EnquiryService {
 
 	Enquiry getSingleEnquiry(int cid);
 
+	Enquiry checkCibilScore(Enquiry enq);
+
 }

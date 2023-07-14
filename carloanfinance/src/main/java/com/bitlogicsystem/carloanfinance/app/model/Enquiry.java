@@ -26,5 +26,7 @@ public class Enquiry {
 	private int age;
 	private String panCard;
 	private String address;
+	private String cibilstatus;
+	private int cibilscore;
 
 }
