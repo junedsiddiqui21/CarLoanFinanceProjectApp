@@ -3,6 +3,8 @@ package com.bitlogicsystem.carloanfinance.app.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
@@ -18,6 +20,7 @@ import lombok.NoArgsConstructor;
 public class SanctionLetter 
 {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int sanctionId;
 	@CreationTimestamp
 	private Date sanctionDate;
