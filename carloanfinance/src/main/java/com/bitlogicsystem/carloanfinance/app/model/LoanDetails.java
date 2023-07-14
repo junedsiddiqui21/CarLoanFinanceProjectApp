@@ -19,4 +19,5 @@ public class LoanDetails
 	private double customerInterestRate;
 	private double customerEMI;
 	private double customerProcessingFees;
+	
 }

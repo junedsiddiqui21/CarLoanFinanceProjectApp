@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -31,4 +32,6 @@ public class SanctionLetter
 	private String remarks;
 	private String termCondition;
 	private String status;
+	@Lob
+	private byte[] sanctionPdf;
 }

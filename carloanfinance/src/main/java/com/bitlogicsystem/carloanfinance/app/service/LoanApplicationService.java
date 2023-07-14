@@ -14,4 +14,5 @@ public interface LoanApplicationService
 	public void deleteloan(int cid);
 	public LoanApplication editloan(int cid);
 	public LoanApplication updateloan(LoanApplication loanapp);
+	public LoanApplication saveDocument(LoanApplication ldoc);
 }

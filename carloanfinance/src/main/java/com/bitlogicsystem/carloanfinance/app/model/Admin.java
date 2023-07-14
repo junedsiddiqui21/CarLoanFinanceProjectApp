@@ -19,8 +19,10 @@ public class Admin {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int aid;
 	private String aname;
+	// user type
 	private String username;
 	private String password;
 	private String fromEmail;
+	//user email
 	private String toEmail;
 }

@@ -21,7 +21,7 @@ public class LoanApplicationController
 	@Autowired
 	LoanApplicationService loanappservice;
 	
-	@PostMapping("save_loandata")
+	@PostMapping("/save_loandata")
 	public ResponseEntity<LoanApplication> loanDetail(@RequestBody LoanApplication loanapp)
 	{
 		LoanApplication lapp = loanappservice.saveloan(loanapp);
@@ -29,7 +29,7 @@ public class LoanApplicationController
 		return new ResponseEntity<LoanApplication>(lapp,HttpStatus.CREATED);
 	}
 	
-	@GetMapping("get_loandata/{customerId}")
+	@GetMapping("/get_loandata/{customerId}")
 	public ResponseEntity<List<LoanApplication>> getloanDetail(@PathVariable("customerId")int cid)
 	{
 		List<LoanApplication> listloan=loanappservice.getloan(cid);
@@ -37,7 +37,7 @@ public class LoanApplicationController
 		return new ResponseEntity<List<LoanApplication>>(listloan,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("delete_loandata/{customerId}")
+	@DeleteMapping("/delete_loandata/{customerId}")
 	public ResponseEntity<String> deleteLoanDetail(@PathVariable("customerId")int cid)
 	{
 		 loanappservice.deleteloan(cid);
@@ -45,7 +45,7 @@ public class LoanApplicationController
 		 return new ResponseEntity<String>("Record Deleted",HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("edit_loandata/{customerId}")
+	@GetMapping("/edit_loandata/{customerId}")
 	public ResponseEntity<LoanApplication> editLoanDetail(@PathVariable("customerId")int cid)
 	{
 		
@@ -54,7 +54,7 @@ public class LoanApplicationController
 		return new ResponseEntity<LoanApplication>(eloan,HttpStatus.OK);
 	}
 	
-	@PutMapping("update_loandata")
+	@PutMapping("/update_loandata")
 	public ResponseEntity<LoanApplication> updateloanDetail(@RequestBody LoanApplication loanapp)
 	{
 		LoanApplication lapp1=loanappservice.updateloan(loanapp);
