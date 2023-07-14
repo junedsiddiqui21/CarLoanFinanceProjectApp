@@ -52,4 +52,9 @@ public class LoanApplicationServiceImpl implements LoanApplicationService
 		return loanapprepository.save(loanapp);
 	}
 
+	@Override
+	public LoanApplication saveDocument(LoanApplication ldoc) 
+	{
+		return loanapprepository.save(ldoc);
+	}
 }

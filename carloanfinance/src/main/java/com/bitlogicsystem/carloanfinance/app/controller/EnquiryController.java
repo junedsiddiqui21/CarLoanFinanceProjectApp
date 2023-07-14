@@ -28,9 +28,8 @@ public class EnquiryController {
 	
 	
 	@PostMapping("/SaveEnquiry")
-	public ResponseEntity<Enquiry> saveEnquiry(@RequestBody Enquiry enquiry){
-		
-		enquiry.setCibilstatus("pending");
+  public ResponseEntity<Enquiry> SaveEnquiry(@RequestBody Enquiry enquiry){
+	enquiry.setCibilstatus("pending");
 		  Enquiry eq=enquiryservice.saveEnquiry(enquiry);
 		
 		return new ResponseEntity<Enquiry>(eq,HttpStatus.OK);

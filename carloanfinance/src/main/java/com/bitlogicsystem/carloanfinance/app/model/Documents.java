@@ -2,6 +2,7 @@ package com.bitlogicsystem.carloanfinance.app.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,14 +14,23 @@ import lombok.NoArgsConstructor;
 public class Documents 
 {
 	@Id
-	private int documentId;
-	private byte[] addressproof;
-	private byte[] pancard;
-	private byte[] incometax;
-	private byte[] addharcard;
-	private byte[] photo;
-	private byte[] signature;
-	private byte[] bankCheque;
-	private byte[] salaryslip;
-	private byte[] carquotation;
+	private int customerdocumentId;
+	@Lob
+	private byte[] customeraddressproof;
+	@Lob
+	private byte[] customerpancard;
+	@Lob
+	private byte[] customerincometax;
+	@Lob
+	private byte[] customeraddharcard;
+	@Lob
+	private byte[] customerphoto;
+	@Lob
+	private byte[] customersignature;
+	@Lob
+	private byte[] customerbankCheque;
+	@Lob
+	private byte[] customersalaryslip;
+	@Lob
+	private byte[] customercarquotation;
 }
