@@ -49,8 +49,8 @@ public class DocumentController
 		ldoc.getDocuments().setCustomersalaryslip(file7.getBytes());
 		ldoc.getDocuments().setCustomercarquotation(file8.getBytes());
 		
-		LoanApplication lapp= loanApplicationService.saveDocument(ldoc);
+		loanApplicationService.saveDocument(ldoc);
 		
-		return  new ResponseEntity<LoanApplication>(lapp,HttpStatus.CREATED);
+		return  new ResponseEntity<LoanApplication>(ldoc,HttpStatus.CREATED);
 	}
 }
