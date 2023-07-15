@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
-import com.bitlogicsystem.carloanfinance.app.service.LoanApplicationService;
+import com.bitlogicsystem.carloanfinance.app.model.Documents;
+import com.bitlogicsystem.carloanfinance.app.service.DocumentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 
 @CrossOrigin("*")
@@ -20,10 +21,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class DocumentController 
 {
 	@Autowired
-	LoanApplicationService loanApplicationService;
+	private DocumentService documentService;
+	
 	
 	@PostMapping(value="/save_document",consumes =MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseEntity<LoanApplication> uploadfile(
+	public ResponseEntity<Documents> uploadfile(
 							   @RequestParam(value="customeraddressproof")MultipartFile file,
 							   @RequestParam(value="customerpancard")MultipartFile file1,
 							   @RequestParam(value="customerincometax")MultipartFile file2,
@@ -32,25 +34,26 @@ public class DocumentController
 							   @RequestParam(value="customersignature")MultipartFile file5,
 							   @RequestParam(value="customerbankCheque")MultipartFile file6,
 							   @RequestParam(value="customersalaryslip")MultipartFile file7,
-							   @RequestParam(value="customercarquotation")MultipartFile file8,
+							   @RequestParam(value="customercarquotations")MultipartFile file8,
 							   @RequestParam(value="data")String json)throws IOException
 	{
 		ObjectMapper om=new ObjectMapper();
 		
-		LoanApplication ldoc=om.readValue(json,LoanApplication.class);
+		Documents ldoc=om.readValue(json,Documents.class);
 		
-		ldoc.getDocuments().setCustomeraddressproof(file.getBytes());
-		ldoc.getDocuments().setCustomerpancard(file1.getBytes());
-		ldoc.getDocuments().setCustomerincometax(file2.getBytes());
-		ldoc.getDocuments().setCustomeraddharcard(file3.getBytes());
-		ldoc.getDocuments().setCustomerphoto(file4.getBytes());
-		ldoc.getDocuments().setCustomersignature(file5.getBytes());
-		ldoc.getDocuments().setCustomerbankCheque(file6.getBytes());
-		ldoc.getDocuments().setCustomersalaryslip(file7.getBytes());
-		ldoc.getDocuments().setCustomercarquotation(file8.getBytes());
+		ldoc.setCustomeraddressproof(file.getBytes());
+		ldoc.setCustomerpancard(file1.getBytes());
+		ldoc.setCustomerincometax(file2.getBytes());
+		ldoc.setCustomeraddharcard(file3.getBytes());
+		ldoc.setCustomerphoto(file4.getBytes());
+		ldoc.setCustomersignature(file5.getBytes());
+		ldoc.setCustomerbankCheque(file6.getBytes());
+		ldoc.setCustomersalaryslip(file7.getBytes());
+		ldoc.setCustomercarquotation(file8.getBytes());
 		
-		loanApplicationService.saveDocument(ldoc);
+		documentService.saveDocument(ldoc);
 		
-		return  new ResponseEntity<LoanApplication>(ldoc,HttpStatus.CREATED);
-	}
+		
+		return  new ResponseEntity<Documents>(ldoc,HttpStatus.CREATED);
+	}	
 }
