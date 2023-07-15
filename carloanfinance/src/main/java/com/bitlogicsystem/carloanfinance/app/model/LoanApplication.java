@@ -40,5 +40,7 @@ public class LoanApplication
 	private CibilScore cibilscore;
 	@OneToOne(cascade = CascadeType.ALL)
 	private SanctionLetter sanctionLetter;
+	@OneToOne(cascade = CascadeType.ALL)
+	private FamilyDependentInformation dependentInformation;
 	
 }
