@@ -28,5 +28,6 @@ public class Enquiry {
 	private String address;
 	private String cibilstatus;
 	private int cibilscore;
+	
 
 }

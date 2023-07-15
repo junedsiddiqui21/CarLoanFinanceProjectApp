@@ -24,14 +24,8 @@ public class EmiServiceImpl implements EmiService {
 		e.setTotal_payable_Amount(totalpayableAmount);
 		System.out.println(monthly_emi);
 		
-		List<EmiCalculator> emi = new ArrayList<>();
-		emi.add(e);
-		
 		return e;
 	}
 	
-	
-
-
 
 }

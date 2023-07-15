@@ -43,9 +43,12 @@ public class EnquiryController {
 		
 	}
 	
-	@PutMapping("/CheckCIBIL/{cid}")
-	public ResponseEntity<Enquiry> checkCibilScore(@PathVariable("cid") Integer cid,@RequestBody Enquiry enq)
+	@GetMapping("/CheckCIBIL/{cid}")
+	public ResponseEntity<Enquiry> checkCibilScore(@PathVariable("cid") Integer cid)
 	{
+		
+		Enquiry enq=enquiryservice.getSingleEnquiry(cid);
+
 		Random ramdom=new Random();
 		int cibilScore = ramdom.nextInt(300, 900);
 		
@@ -70,6 +73,14 @@ public class EnquiryController {
 		return  new ResponseEntity<Enquiry>(enq,HttpStatus.OK);
 	}
 	
+	@GetMapping("/getCibil/{cibilstatus}")
+	public ResponseEntity<Enquiry> getCibilScore(@PathVariable("cibilstatus")String cibilstatus)
+	{
+		Enquiry cibil =enquiryservice.getCibilScoreStatus(cibilstatus);
+		
+		return new ResponseEntity<>(cibil,HttpStatus.OK);
+	}
+	
 			
 	@DeleteMapping("/DeleteEnquiry/{cid}")
 	public ResponseEntity<String> deleteEnquiry(@PathVariable int cid){
@@ -82,8 +93,7 @@ public class EnquiryController {
 	public ResponseEntity<Enquiry> getSingleEnquiry(@PathVariable int cid){
 		
 		Enquiry et=enquiryservice.getSingleEnquiry(cid);
-		return new ResponseEntity<Enquiry>(et,HttpStatus.OK);
-		
+		return new ResponseEntity<Enquiry>(et,HttpStatus.OK);	
 		
 	}
 
