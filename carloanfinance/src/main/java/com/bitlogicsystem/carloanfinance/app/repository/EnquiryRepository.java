@@ -8,4 +8,6 @@ import com.bitlogicsystem.carloanfinance.app.model.Enquiry;
 @Repository
 public interface EnquiryRepository extends JpaRepository<Enquiry,Integer> {
 
+	Enquiry findByCibilstatus(String cibilstatus);
+
 }

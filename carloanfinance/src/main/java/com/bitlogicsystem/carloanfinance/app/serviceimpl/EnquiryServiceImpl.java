@@ -50,4 +50,11 @@ public class EnquiryServiceImpl  implements EnquiryService{
 	return enquiryRepository.save(enq);
 	}
 
+	@Override
+	public Enquiry getCibilScoreStatus(String cibilstatus) {
+		// TODO Auto-generated method stub
+		
+		return enquiryRepository.findByCibilstatus(cibilstatus);
+	}
+
 }

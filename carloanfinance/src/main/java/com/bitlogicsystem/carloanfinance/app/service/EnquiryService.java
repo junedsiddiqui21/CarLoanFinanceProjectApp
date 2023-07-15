@@ -16,4 +16,6 @@ public interface EnquiryService {
 
 	Enquiry checkCibilScore(Enquiry enq);
 
+	Enquiry getCibilScoreStatus(String cibilstatus);
+
 }
