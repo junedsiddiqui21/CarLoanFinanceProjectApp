@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitlogicsystem.carloanfinance.app.model.Documents;
+import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 import com.bitlogicsystem.carloanfinance.app.repository.DocumentRepository;
 import com.bitlogicsystem.carloanfinance.app.service.DocumentService;
 
@@ -14,8 +15,8 @@ public class DocumentServiceImpl implements DocumentService
 	DocumentRepository documentRepository;
 
 	@Override
-	public void saveDocument(Documents ldoc) 
+	public void saveDocument(LoanApplication ldoc) 
 	{
-		documentRepository.save(ldoc);
-	}
+		documentRepository.save(ldoc);	
+	}	
 }

@@ -1,8 +1,10 @@
 package com.bitlogicsystem.carloanfinance.app.service;
 
-import com.bitlogicsystem.carloanfinance.app.model.Documents;
+import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 
 public interface DocumentService
 {
-	public void saveDocument(Documents ldoc);
+
+  public void saveDocument(LoanApplication ldoc);
+	
 }
