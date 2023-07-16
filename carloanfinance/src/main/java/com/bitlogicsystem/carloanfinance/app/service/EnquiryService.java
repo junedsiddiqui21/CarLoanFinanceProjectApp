@@ -18,4 +18,6 @@ public interface EnquiryService {
 
 	Enquiry getCibilScoreStatus(String cibilstatus);
 
+	List<Enquiry> getForwardedForm(String forwardStatus);
+
 }

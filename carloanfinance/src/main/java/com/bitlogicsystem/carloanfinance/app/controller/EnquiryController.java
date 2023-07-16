@@ -32,9 +32,9 @@ public class EnquiryController {
 	enquiry.setCibilstatus("pending");
 		  Enquiry eq=enquiryservice.saveEnquiry(enquiry);
 		
-		return new ResponseEntity<Enquiry>(eq,HttpStatus.OK);
-		
+		return new ResponseEntity<Enquiry>(eq,HttpStatus.OK);	
 	}
+	
 	@GetMapping("/GetEnquiry")
 	public ResponseEntity<List<Enquiry>> getEnquiry(){
 		
@@ -94,7 +94,25 @@ public class EnquiryController {
 		
 		Enquiry et=enquiryservice.getSingleEnquiry(cid);
 		return new ResponseEntity<Enquiry>(et,HttpStatus.OK);	
-		
 	}
+	
+	
+	@GetMapping("/forwarded/{cid}")
+	public ResponseEntity<Enquiry> forwardStatus(@PathVariable("cid") Integer cid)
+	{
+		Enquiry enq=enquiryservice.getSingleEnquiry(cid);
+		enq.setForwardStatus("Forwarded");
+		 Enquiry enquiry = enquiryservice.checkCibilScore(enq);
+		return new ResponseEntity<>(enquiry,HttpStatus.OK);
+	}
+	
+	@GetMapping("/getForwardForm/{forwardStatus}")
+	public ResponseEntity<List<Enquiry>> getForwardedForm(@PathVariable("forwardStatus")String forwardStatus)
+	{
+		List<Enquiry> forwardform=enquiryservice.getForwardedForm(forwardStatus);
+		return new ResponseEntity<>(forwardform,HttpStatus.OK);
+	}
+	
+	
 
 }

@@ -47,6 +47,7 @@ public class EnquiryServiceImpl  implements EnquiryService{
 
 	@Override
 	public Enquiry checkCibilScore(Enquiry enq) {
+		
 	return enquiryRepository.save(enq);
 	}
 
@@ -55,6 +56,12 @@ public class EnquiryServiceImpl  implements EnquiryService{
 		// TODO Auto-generated method stub
 		
 		return enquiryRepository.findByCibilstatus(cibilstatus);
+	}
+
+	@Override
+	public List<Enquiry> getForwardedForm(String forwardStatus) {
+		// TODO Auto-generated method stub
+		return enquiryRepository.findByForwardStatus(forwardStatus);
 	}
 
 }
