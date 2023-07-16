@@ -4,9 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.bitlogicsystem.carloanfinance.app.model.Documents;
+import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 
 @Repository
-public interface DocumentRepository extends JpaRepository<Documents,Integer>
+public interface DocumentRepository extends JpaRepository<LoanApplication,Integer>
 {
 
 }

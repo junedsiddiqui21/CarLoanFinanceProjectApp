@@ -29,6 +29,8 @@ public class LoanApplication
 	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerAddress customerAddress;
 	@OneToOne(cascade = CascadeType.ALL)
+	private EducationalInfo educationalInfo;
+	@OneToOne(cascade = CascadeType.ALL)
 	private Profession profession;
 	@OneToOne(cascade = CascadeType.ALL)
 	private LoanDetails loandetails;
@@ -38,4 +40,7 @@ public class LoanApplication
 	private CibilScore cibilscore;
 	@OneToOne(cascade = CascadeType.ALL)
 	private SanctionLetter sanctionLetter;
+	@OneToOne(cascade = CascadeType.ALL)
+	private FamilyDependentInformation dependentInformation;
+	
 }
