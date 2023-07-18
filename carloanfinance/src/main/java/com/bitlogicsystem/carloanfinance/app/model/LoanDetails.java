@@ -20,7 +20,8 @@ public class LoanDetails
 	private double custemorLoanAmmount;
 	private long customerLoanTenure;
 	private double customerInterestRate;
-	private double customerEMI;
+	private String customerEMI;
 	private double customerProcessingFees;
+	
 	
 }
