@@ -1,5 +1,6 @@
 package com.bitlogicsystem.carloanfinance.app.serviceimpl;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ public class EmiServiceImpl implements EmiService {
 	@Override
 	public EmiCalculator calculatedEmi(EmiCalculator e) {
 		
+		DecimalFormat df=new DecimalFormat("#.##");
+		
 		double p = e.getLoan_Amount();
 		double rates = e.getInterest_rates()/(12*100);
 		double n = e.getTenure();
@@ -19,9 +22,9 @@ public class EmiServiceImpl implements EmiService {
 		double interestAmount = (monthly_emi*n)-p;
 		double totalpayableAmount = p+interestAmount;
 		
-		e.setEmi(monthly_emi);
-		e.setInterest_Amount(interestAmount);
-		e.setTotal_payable_Amount(totalpayableAmount);
+		e.setEmi(df.format(monthly_emi));
+		e.setInterest_Amount(df.format(interestAmount));
+		e.setTotal_payable_Amount(df.format(totalpayableAmount));
 		System.out.println(monthly_emi);
 		
 		return e;
