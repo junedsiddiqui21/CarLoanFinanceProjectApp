@@ -22,24 +22,23 @@ public class LoanDetailsServiceImpl implements LoanDetailsService
 	@Override
 	public LoanApplication LoanDetail(LoanApplication lapp) 
 	{	
-		DecimalFormat df=new DecimalFormat("#.##");
 		
-		double principle=lapp.getLoandetails().getCustemorLoanAmmount();
 		
-		double rate=lapp.getLoandetails().getCustomerInterestRate()/(12*100);
-		
-		double n=lapp.getLoandetails().getCustomerLoanTenure();
-	
-		double monthlyemi=(principle*rate*Math.pow(1+rate,n))/(Math.pow(1+rate,n)-1);
-		//df.format(monthlyemi);
-		
-		double processfees=principle*(0.5/100);
-		
-		lapp.getLoandetails().setCustomerEMI(df.format(monthlyemi));
-		lapp.getLoandetails().setCustomerProcessingFees(processfees);
-		
-		System.out.println("Processing fees"+processfees);
-		System.out.println("Monthly Emi"+(monthlyemi));
+//		double principle=lapp.getLoandetails().getCustemorLoanAmmount();
+//		
+//		double rate=lapp.getLoandetails().getCustomerInterestRate()/(12*100);
+//		
+//		double n=lapp.getLoandetails().getCustomerLoanTenure();
+//	
+//		double monthlyemi=(principle*rate*Math.pow(1+rate,n))/(Math.pow(1+rate,n)-1);
+//		
+//		double processfees=principle*(0.5/100);
+//		
+//		lapp.getLoandetails().setCustomerEMI(monthlyemi);
+//		lapp.getLoandetails().setCustomerProcessingFees(processfees);
+//		
+//		System.out.println("Processing fees"+processfees);
+//		System.out.println("Monthly Emi"+(monthlyemi));
 		
 		
 		return loanDetailsRepository.save(lapp);
