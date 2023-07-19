@@ -32,14 +32,13 @@ public class DocumentController
 							   @RequestParam(value="customersignature")MultipartFile file5,
 							   @RequestParam(value="customerbankCheque")MultipartFile file6,
 							   @RequestParam(value="customersalaryslip")MultipartFile file7,
-							   @RequestParam(value="customercarquotations")MultipartFile file8,
+							   @RequestParam(value="customercarquotation")MultipartFile file8,
 							   @RequestParam(value ="professionsalaryslip")MultipartFile file9,
 							   @RequestParam(value="data")String json)throws IOException
 	{
 		ObjectMapper om=new ObjectMapper();
 		
 		LoanApplication ldoc=om.readValue(json,LoanApplication.class);
-		
 		ldoc.getDocuments().setCustomeraddressproof(file.getBytes());
 		ldoc.getDocuments().setCustomerpancard(file1.getBytes());
 		ldoc.getDocuments().setCustomerincometax(file2.getBytes());
