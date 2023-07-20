@@ -2,16 +2,20 @@ package com.bitlogicsystem.carloanfinance.app.service;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.Optional;
 
+import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 import com.bitlogicsystem.carloanfinance.app.model.SanctionLetter;
 
 public interface SanctionService {
-	SanctionLetter saveSanctionLetter(SanctionLetter scl);
+	public ByteArrayInputStream createSanctionpdf(int sanctionid);
 
-	ByteArrayInputStream createSanctionpdf(int sanctionid);
+	public void sendSanctionMail(int sanctionid);
 
-      void sendSanctionMail(int sanctionid);
+	public LoanApplication saveSanctionLetter(LoanApplication sc);
 
-	List<SanctionLetter> getallSanctiondetails(int sanctionid);
+	public void updateLoanStatus(SanctionLetter sanletter);
+
+	public SanctionLetter getsacLetter(int sanctionId);
 
 }
