@@ -25,7 +25,7 @@ import com.bitlogicsystem.carloanfinance.app.service.SanctionService;
 @Service
 public class SanctionServiceImpl implements SanctionService {
 
-	@Autowired   
+	@Autowired    
 	private SanctionLetterRepository sr;
 
 	@Autowired

@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
-@NoArgsConstructor  
+@NoArgsConstructor   
 @AllArgsConstructor
 @Entity
 public class SanctionLetter 

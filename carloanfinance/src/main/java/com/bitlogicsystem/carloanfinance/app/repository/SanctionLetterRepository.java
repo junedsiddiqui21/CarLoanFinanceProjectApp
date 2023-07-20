@@ -17,5 +17,5 @@ public interface SanctionLetterRepository extends JpaRepository<SanctionLetter, 
 
 	@Query (value ="SELECT * FROM carloanproject.sanction_letter  Where sanction_id = ?1",nativeQuery = true )
 	Optional<SanctionLetter> findBysacId(int sanctionId);
-
+ 
 }
