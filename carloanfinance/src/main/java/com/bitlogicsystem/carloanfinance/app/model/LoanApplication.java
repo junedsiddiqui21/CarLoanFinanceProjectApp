@@ -1,15 +1,18 @@
 package com.bitlogicsystem.carloanfinance.app.model;
 
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,10 +40,13 @@ public class LoanApplication
 	@OneToOne(cascade = CascadeType.ALL)
 	private Documents documents;
 	@OneToOne(cascade = CascadeType.ALL)
-	private CibilScore cibilscore;
-	@OneToOne(cascade = CascadeType.ALL)
 	private SanctionLetter sanctionLetter;
 	@OneToOne(cascade = CascadeType.ALL)
 	private FamilyDependentInformation dependentInformation;
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private PreviousLoanBank previousLoanBank;
+	@OneToOne(cascade = CascadeType.ALL)
+	private BankDetails bankDetails;
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<BankTransaction> bankTransaction;
 }

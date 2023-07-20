@@ -9,20 +9,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Admin {
-
+@AllArgsConstructor
+@Entity
+public class BankDetails 
+{
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int aid;
-	private String aname;
-	// user type
-	private String username;
-	private String password;
-	private String fromEmail;
-	//user email
-	private String toEmail;
+	private int bankDetailsId;
+	private String bankHolderName;
+	private String bankName;
+	private long bankAccountNumber;
+	private String bankIFSC_code;
+	private double accountBalance;
 }

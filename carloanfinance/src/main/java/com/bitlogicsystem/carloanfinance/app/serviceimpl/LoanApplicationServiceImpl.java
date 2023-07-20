@@ -16,6 +16,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService
 	@Autowired
 	LoanApplicationRepository loanapprepository;
 	
+	//<-------------------------------------Loan Application--------------------------------------------------->
 	@Override
 	public LoanApplication saveloan(LoanApplication loanapp) 
 	{
@@ -51,10 +52,31 @@ public class LoanApplicationServiceImpl implements LoanApplicationService
 	{
 		return loanapprepository.save(loanapp);
 	}
+	
+	//<----------------------------------Bank Details-------------------------------------------->
+	
+	@Override
+	public LoanApplication saveBankDetail(LoanApplication lapp)
+	{
+		return loanapprepository.save(lapp);
+	}
 
 	@Override
-	public LoanApplication saveDocument(LoanApplication ldoc) 
+	public LoanApplication getBankDetail(int cid) 
 	{
-		return loanapprepository.save(ldoc);
+		 Optional<LoanApplication> oploan =loanapprepository.findById(cid);
+		 if (oploan.isPresent())
+		{
+			 LoanApplication la=oploan.get();
+			 return la;
+		}
+		 return null;
 	}
+
+	@Override
+	public List<LoanApplication> getBankDetais() 
+	{
+		return loanapprepository.findAll();
+	}
+
 }
