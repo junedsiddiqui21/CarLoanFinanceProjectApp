@@ -57,4 +57,5 @@ public class SanctionLetterController {
 
 		return new ResponseEntity<SanctionLetter>(st, HttpStatus.OK);
 	}
+	
 }
