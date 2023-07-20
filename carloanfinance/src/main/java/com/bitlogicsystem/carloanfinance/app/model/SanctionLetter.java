@@ -14,14 +14,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
-@NoArgsConstructor
+@NoArgsConstructor   
 @AllArgsConstructor
 @Entity
 public class SanctionLetter 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int sanctionId;
+	private int sanctionId; 
 	@CreationTimestamp
 	private Date sanctionDate;
 	private String applicantName;
