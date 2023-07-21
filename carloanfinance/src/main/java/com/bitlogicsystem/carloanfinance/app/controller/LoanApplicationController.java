@@ -65,7 +65,7 @@ public class LoanApplicationController
 		LoanApplication lapp1=loanappservice.updateloan(loanapp);
 		
 		return new ResponseEntity<LoanApplication>(lapp1,HttpStatus.OK);
-	}
+	}     
 	
 	//<----------------------------------For Transaction----------------------------------------->
 	

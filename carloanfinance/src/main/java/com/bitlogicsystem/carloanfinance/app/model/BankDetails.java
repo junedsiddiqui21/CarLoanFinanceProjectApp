@@ -17,7 +17,7 @@ public class BankDetails
 {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	private int bankDetailsId;
+	private int bankDetailsId;     
 	private String bankHolderName;
 	private String bankName;
 	private long bankAccountNumber;

@@ -1,7 +1,5 @@
 package com.bitlogicsystem.carloanfinance.app.serviceimpl;
 
-
-import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
-import com.bitlogicsystem.carloanfinance.app.model.LoanDetails;
 import com.bitlogicsystem.carloanfinance.app.repository.LoanDetailsRepository;
 import com.bitlogicsystem.carloanfinance.app.service.LoanDetailsService;
 
@@ -23,7 +20,7 @@ public class LoanDetailsServiceImpl implements LoanDetailsService
 	public LoanApplication LoanDetail(LoanApplication lapp) 
 	{	
 		
-		
+		      
 //		double principle=lapp.getLoandetails().getCustemorLoanAmmount();
 //		
 //		double rate=lapp.getLoandetails().getCustomerInterestRate()/(12*100);

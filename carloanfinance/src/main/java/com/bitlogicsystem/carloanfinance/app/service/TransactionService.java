@@ -10,3 +10,4 @@ public interface TransactionService
 
 	LoanApplication getTransaction(int cid);
 }
+     

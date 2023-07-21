@@ -9,3 +9,4 @@ import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 public interface TransactionRepository extends JpaRepository<LoanApplication,Integer>{
 
 }
+     

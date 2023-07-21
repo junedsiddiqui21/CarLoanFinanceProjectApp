@@ -18,5 +18,5 @@ public interface LoanApplicationRepository extends JpaRepository<LoanApplication
 
 	List<LoanApplication> findByCustomerId(int cid);
 	
-	
+	    
 }

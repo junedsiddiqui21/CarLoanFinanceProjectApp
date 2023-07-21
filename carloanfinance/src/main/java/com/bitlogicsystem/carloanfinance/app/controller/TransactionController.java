@@ -11,12 +11,12 @@ import com.bitlogicsystem.carloanfinance.app.model.BankTransaction;
 import com.bitlogicsystem.carloanfinance.app.model.BaseResponse;
 import com.bitlogicsystem.carloanfinance.app.model.LoanApplication;
 import com.bitlogicsystem.carloanfinance.app.service.TransactionService;
-
+     
 @RestController
 public class TransactionController
 {
 	@Autowired
-	TransactionService transactionService;
+	TransactionService transactionService;    
 	
 	@PostMapping("/save_transaction/{customerId}")
 	public BaseResponse saveTransaction(@PathVariable("customerId")int cid,@RequestBody BankTransaction bt)

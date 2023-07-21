@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaseResponse 
-{
+{    
 	private int responseStatus;
 	private String responsemassage;
+	
+	
 }

@@ -15,6 +15,7 @@ public interface LoanApplicationService
 	public LoanApplication editloan(int cid);
 	public LoanApplication updateloan(LoanApplication loanapp);
 	
+	    
 	
 	//<----------------------Bank Details----------------------------------->
 	public LoanApplication saveBankDetail(LoanApplication lapp);
